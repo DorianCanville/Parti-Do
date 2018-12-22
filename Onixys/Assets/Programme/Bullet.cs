@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour {
 
     }
 
-    void HitTarget() //eessaye de faire un autre script pour le kill des ennemis
+    void HitTarget() //essaye de faire un autre script pour le kill des ennemis
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 5f);

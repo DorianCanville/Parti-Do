@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Tir : MonoBehaviour {
 
+    [SerializeField]
+    private Camera eye;
+
     private Transform target;
     public GameObject bulletArme;
     public GameObject impactEffect;
     public float bulletSpeed = 50f;
     public string enemyTag = "Enemy";
+
+    public PlayerWeapon weapon;
 
     void Start()
     {
@@ -45,11 +50,18 @@ public class Tir : MonoBehaviour {
     {
         target = _target;
     }
+    private void Shoot()
+    {
+        RaycastHit _hit;
+        if (Physics.Raycast(eye.transform.position, eye.transform.forward, out _hit, weapon.range))
+        {
 
+        }
+    }
     void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("fire");
+            Shoot();
             GameObject bulletGO = (GameObject)Instantiate(bulletArme, transform.position, transform.rotation);
             Bullet bullet = bulletGO.GetComponent<Bullet>();
             if (bullet != null)

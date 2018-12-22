@@ -19,7 +19,7 @@ public class BuildManager : MonoBehaviour {
     #endregion
     public GameObject standardTurretPrefab;
 
-    private TurretBlueprint turretToBuild;
+    public static TurretBlueprint turretToBuild;
 
     public bool canBuild { get { return turretToBuild != null; } }
     public bool hasMoney { get { return PlayerStat.money >= turretToBuild.cost; } }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour {
 
     private BuildManager buildManager;
+    public static string Towerselect;
     public TurretBlueprint machineGun;
     public TurretBlueprint missileLauncher;
 
@@ -15,16 +16,18 @@ public class Shop : MonoBehaviour {
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) {SelectStandardTurret(); }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) { SelectMissileLauncher(); }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {SelectMissileLauncher(); }
     }
     public void SelectStandardTurret()
     {
         Debug.Log("Machine gun select");
         buildManager.SelectTurretToBuild(machineGun);
+        Towerselect = "Machine Gun";
     }
     public void SelectMissileLauncher()
     {
         Debug.Log("Missile Launcher select");
         buildManager.SelectTurretToBuild(missileLauncher);
+        Towerselect = "Missile Launcher";
     }
 }
