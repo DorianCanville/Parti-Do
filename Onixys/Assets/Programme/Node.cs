@@ -12,6 +12,7 @@ public class Node : MonoBehaviour
     public GameObject turret;
     private Renderer rend;
     private BuildManager buildManager;
+    private bool towerBuild = false;
 
     private void Start()
     {
@@ -36,19 +37,24 @@ public class Node : MonoBehaviour
             return;
         }
         buildManager.BuildTurretOn(this);
+        towerBuild = true;
     }
 
     private void OnMouseEnter()
     {
-        if (buildManager.hasMoney)
+        if (towerBuild)
+        {
+            rend.material.color = startColor;
+        }
+        else if (!buildManager.canBuild)
+        {
+            return;
+        }
+        else if (buildManager.hasMoney)
         {
             rend.material.color = hoverColor;
         }
         else rend.material.color = notEnoughMoneyColor;
-        if (!buildManager.canBuild)
-        {
-            return;
-        }
     }
 
     private void OnMouseExit()

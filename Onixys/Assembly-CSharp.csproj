@@ -64,6 +64,7 @@
     <Compile Include="Assets\Programme\ATH.cs" />
     <Compile Include="Assets\Programme\BuildManager.cs" />
     <Compile Include="Assets\Programme\Bullet.cs" />
+    <Compile Include="Assets\Programme\BulletTestGun.cs" />
     <Compile Include="Assets\Programme\Enemys.cs" />
     <Compile Include="Assets\Programme\FPS_Controler.cs" />
     <Compile Include="Assets\Programme\Missile.cs" />
@@ -77,6 +78,9 @@
     <Compile Include="Assets\Programme\TurretBlueprint.cs" />
     <Compile Include="Assets\Programme\WaveSpawner.cs" />
     <Compile Include="Assets\Programme\Waypoints.cs" />
+    <Compile Include="Assets\ProjectilesMove.cs" />
+    <Compile Include="Assets\RotateToMouse.cs" />
+    <Compile Include="Assets\SpawnProjectiles.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStat : MonoBehaviour {
     public static int money;
-    public int startMoney = 100;
+    private int startMoney = 100;
 
     public void Start()
     {

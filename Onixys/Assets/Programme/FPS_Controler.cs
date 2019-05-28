@@ -9,13 +9,10 @@ public class FPS_Controler : MonoBehaviour {
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     private Vector3 moveDirection = Vector3.zero;
-
     CharacterController player;
     public GameObject eyes;
-
     float rotX;
     float rotY;
-
     bool Sprint = false;
 
     private void Awake()
@@ -29,28 +26,28 @@ public class FPS_Controler : MonoBehaviour {
         if (Input.GetKeyDown("t")) Cursor.lockState = CursorLockMode.None;
 
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            if (Sprint == true)
-            {
+         if (Input.GetKeyDown(KeyCode.LeftShift))
+         {
+             if (Sprint == true)
+             {
                 Sprint = false;
                 speed = 10f;
-            }
-            else Sprint = true;
-        }
-        if (Sprint == true) speed = 20f;
+             }
+             else Sprint = true;
+         }
+         if (Sprint == true) speed = 20f;
  
-            if (player.isGrounded)
-            {
-                moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-                moveDirection = transform.TransformDirection(moveDirection);
-                moveDirection = moveDirection * speed;
+         if (player.isGrounded)
+         {
+             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+             moveDirection = transform.TransformDirection(moveDirection);
+             moveDirection = moveDirection * speed;
 
-                if (Input.GetButton("Jump"))
-                {
-                    moveDirection.y = jumpSpeed;
-                }
-            }
+             if (Input.GetButton("Jump"))
+             {
+                 moveDirection.y = jumpSpeed;
+             }
+         }
 
             rotX = Input.GetAxis("Mouse X") * sensitivity;
             rotY = Input.GetAxis("Mouse Y") * sensitivity;
